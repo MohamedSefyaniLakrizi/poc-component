@@ -1,5 +1,6 @@
 import datetime
 import os
+import sys
 import textwrap
 
 # Configuration for the Sphinx documentation builder.
@@ -139,8 +140,11 @@ sitemap_excludes = [
 # Template and asset locations #
 ################################
 
-# html_static_path = ["_static"]
-# templates_path = ["_templates"]
+html_static_path = ["_static"]
+templates_path = ["_templates"]
+
+# Local extensions that provide reusable documentation components.
+sys.path.insert(0, os.path.abspath("."))
 
 #############
 # Redirects #
@@ -216,6 +220,7 @@ linkcheck_retries = 3
 # Custom Sphinx extensions; see
 # https://www.sphinx-doc.org/en/master/usage/extensions/index.html
 extensions = [
+    "component",
     "canonical_sphinx",
     "notfound.extension",
     "sphinx_design",
@@ -247,9 +252,9 @@ exclude_patterns = [
 ]
 
 # Adds custom CSS files, located remotely or in 'html_static_path'.
-# html_css_files = [
-#     "https://assets.ubuntu.com/v1/d86746ef-cookie_banner.css",
-# ]
+html_css_files = [
+    "vanilla-components.css",
+]
 
 # Adds custom JavaScript files, located remotely or in 'html_static_path'.
 # html_js_files = [

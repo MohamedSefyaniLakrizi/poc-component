@@ -34,6 +34,7 @@ Governance and policies
     how-to/index
     reference/index
     explanation/index
+    component-examples
 
 .. toctree::
     :hidden:

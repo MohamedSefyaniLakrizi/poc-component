@@ -1,0 +1,182 @@
+/*
+ * Vanilla Framework-compatible component styles, deliberately scoped to avoid
+ * overriding Furo's document background and colour-scheme variables.
+ * Canonical palette: Ubuntu Orange, dark-orange hover, and Ubuntu Blue focus.
+ */
+:root {
+  --canonical-orange: #e95420;
+  --canonical-orange-hover: #c7162b;
+  --canonical-blue-focus: #2e96ff;
+  --canonical-negative: #c7162b;
+  --canonical-positive: #0e8420;
+  --canonical-caution: #f99b11;
+}
+.vanilla-component-scope {
+  color: var(--color-foreground-primary);
+}
+
+.vanilla-component-scope .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 72rem;
+}
+
+.vanilla-component-scope .col-8 {
+  flex: 1 1 0;
+  min-width: min(100%, 32rem);
+}
+
+.vanilla-component-scope .col-4 {
+  align-items: center;
+  display: flex;
+  flex: 0 1 16rem;
+}
+
+.vanilla-component-scope .p-strip,
+.vanilla-component-scope .p-strip--accent {
+  margin: 1.5rem 0;
+  padding: 2rem;
+}
+
+.vanilla-component-scope .p-strip {
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-background-border);
+}
+
+.vanilla-component-scope .p-strip--accent {
+  background: color-mix(in srgb, var(--canonical-orange) 12%, var(--color-background-primary));
+  border-left: 4px solid var(--canonical-orange);
+}
+
+.vanilla-component-scope .p-card {
+  background: var(--color-background-primary);
+  border: 1px solid var(--color-background-border);
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.vanilla-component-scope .p-card__title {
+  margin-top: 0;
+}
+
+.vanilla-component-scope .p-notification--information,
+.vanilla-component-scope .p-notification--positive,
+.vanilla-component-scope .p-notification--caution,
+.vanilla-component-scope .p-notification--negative {
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-background-border);
+  border-left-width: 4px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.vanilla-component-scope .p-notification--information { border-left-color: var(--canonical-blue-focus); }
+.vanilla-component-scope .p-notification--positive { border-left-color: var(--canonical-positive); }
+.vanilla-component-scope .p-notification--caution { border-left-color: var(--canonical-caution); }
+.vanilla-component-scope .p-notification--negative { border-left-color: var(--canonical-negative); }
+
+.vanilla-component-scope .p-notification__title {
+  margin: 0 0 0.5rem;
+}
+
+.vanilla-component-scope .p-notification__message,
+.vanilla-component-scope .u-no-margin--bottom {
+  margin-bottom: 0;
+}
+
+.vanilla-component-scope .p-button,
+.vanilla-component-scope .p-button--positive {
+  border: 1px solid currentColor;
+  border-radius: 0.125rem;
+  display: inline-block;
+  font-weight: 600;
+  margin: 0 0.75rem 0.75rem 0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.vanilla-component-scope .p-button {
+  border-color: var(--canonical-orange);
+  color: var(--canonical-orange);
+}
+
+.vanilla-component-scope .p-button--positive {
+  background: var(--canonical-orange);
+  border-color: var(--canonical-orange);
+  color: #fff;
+}
+
+.vanilla-component-scope .p-button--negative {
+  background: var(--canonical-negative);
+  border-color: var(--canonical-negative);
+  color: #fff;
+}
+
+.vanilla-component-scope .p-button:hover {
+  background: var(--canonical-orange);
+  color: #fff;
+}
+
+.vanilla-component-scope .p-button--positive:hover,
+.vanilla-component-scope .p-button--negative:hover {
+  background: var(--canonical-orange-hover);
+  border-color: var(--canonical-orange-hover);
+  color: #fff;
+}
+
+.vanilla-component-scope .p-button:focus-visible,
+.vanilla-component-scope .p-button--positive:focus-visible,
+.vanilla-component-scope .p-button--negative:focus-visible {
+  outline: 3px solid var(--canonical-blue-focus);
+  outline-offset: 2px;
+}
+
+.vanilla-component-scope .p-accordion {
+  background: var(--color-background-primary);
+  border-bottom: 1px solid var(--color-background-border);
+  border-top: 1px solid var(--color-background-border);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+}
+
+.vanilla-component-scope .p-accordion summary {
+  color: var(--canonical-orange);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.vanilla-component-scope .p-accordion summary:hover {
+  color: var(--canonical-orange-hover);
+}
+
+.vanilla-component-scope .p-accordion__panel {
+  border-top: 1px solid var(--color-background-border);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.vanilla-component-scope .p-table-wrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.vanilla-component-scope .p-table {
+  border-collapse: collapse;
+  min-width: 100%;
+}
+
+.vanilla-component-scope .p-table th,
+.vanilla-component-scope .p-table td {
+  border-bottom: 1px solid var(--color-background-border);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.vanilla-component-scope .p-table th {
+  background: color-mix(in srgb, var(--canonical-orange) 10%, var(--color-background-secondary));
+  color: var(--color-foreground-primary);
+}
